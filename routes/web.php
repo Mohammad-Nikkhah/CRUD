@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\testController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('/form',[testController::class,'create']);
+Route::get('/show',[testController::class,'index']);
+Route::post('/save',[testController::class,'store']);
+Route::get('/delet/{id?}',[testController::class,'destroy']);
+Route::get('/update/{id?}',[testController::class,'update']);
+
+
