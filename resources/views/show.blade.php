@@ -33,7 +33,7 @@ tr:nth-child(even) {
             @endforeach
             <td>
             <a href="/delet/{{ $student->id }}" class="btn btn-danger"> Delete </a>
-            <a href="/update/{{ $student->id }}" class="btn btn-primary"> Update </a>
+            <a href="/edit/{{ $student->id }}" class="btn btn-primary"> Update </a>
 
             </td>
         </tr>

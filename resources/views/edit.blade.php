@@ -52,15 +52,15 @@
   <body class="text-center">
     
 
-  <form method="POST" action="/update">
+  <form method="POST" action="/edit">
      @csrf 
   <div class="form-group">
     <label for="name"> Edit Name</label>
-    <input type="string" class="form-control"  value="" id="name" placeholder="Enter name" name="name">
+    <input type="string" class="form-control"  value="{{ $student->name }}" id="name" placeholder="Enter name" name="name">
   </div>
   <div class="form-group">
     <label for="Pages"> Edit icnumber</label>
-    <input type=sucsses"number" class="form-control"value="edite icnumber"  id="icnumber" placeholder="icnumber" name="icnumber">
+    <input type=sucsses"number" class="form-control" id="icnumber" placeholder="icnumber" name="icnumber" value="{{ $student->icnumber }}">
   </div>
 
  

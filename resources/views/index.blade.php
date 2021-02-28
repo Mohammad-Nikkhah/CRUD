@@ -16,9 +16,7 @@
 
  <div class="btn-group"role="group" aria-label="Basic example" style="gravi">
   
-  <a href="/show" class="btn btn-primary">show</a>
-  <a href="/form" class="btn btn-success">Create</a>
-  <a href="/delet" class="btn btn-danger">Delete</a>
+  <a href="/show" class="btn btn-primary">Start</a>
   
 
  

@@ -26,6 +26,8 @@ Route::get('/form',[testController::class,'create']);
 Route::get('/show',[testController::class,'index']);
 Route::post('/save',[testController::class,'store']);
 Route::get('/delet/{id?}',[testController::class,'destroy']);
-Route::get('/update/{id?}',[testController::class,'update']);
+Route::post('/update',[testController::class,'edit'])->name('edit');
+Route::get('/edit/{id}',[testController::class,'form']);
+
 
 

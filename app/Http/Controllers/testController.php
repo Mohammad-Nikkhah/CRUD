@@ -6,6 +6,7 @@ use App\Models\Student;
 use BaconQrCode\Renderer\Color\Rgb;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\VarDumper\Cloner\Stub;
 
 class testController extends Controller
 {
@@ -45,7 +46,7 @@ class testController extends Controller
          $student->icnumber = $request->icnumber;
          $student->save();
         
-         return redirect('index',302);
+         return redirect('/show',302);
     }
 
     /**
@@ -65,12 +66,14 @@ class testController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id,Request $request)
+    public function edit($id)
     {
-        $student =  Student::find($id);
-        $student->name = $request->name;
-        $student->icnumber = $request->icnumber;
-        $student->save();
+        $student = Student::find($id);
+     
+    }
+    public function form($id){
+        $student = Student::find($id);
+        return view('edit',compact('student'));
     }
 
     /**
@@ -80,10 +83,9 @@ class testController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        Student::whereId($id)->update($request->all());
-        return redirect('/update',302);
+        
     }
 
     /**
@@ -96,7 +98,7 @@ class testController extends Controller
     {
         $student = Student::find($id);
         $student->delete();
-        return true;
+        return redirect('/show',302);
 
     }
 }
